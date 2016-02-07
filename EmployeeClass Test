@@ -1,0 +1,27 @@
+public class programEmployeeClass {
+
+    public static void main(String[] args) {
+
+        String holdN1;
+        String nameT = "Susan Myers ", positionT = "Vice President ", departmentT = " Accounting ";
+        int iDT = 47899;
+
+        Employee setUp = new Employee("Susan Myers ", 47899, " Vice President ", " Accounting ");
+        System.out.print(setUp.getName());
+        System.out.print(setUp.getidNumber());
+        System.out.print(setUp.getDepartment());
+        System.out.println(setUp.getPostion());
+
+        Employee setUp1 = new Employee("Mark Jones ", 39119, " IT ", "Programmer ");
+        System.out.print(setUp1.getName());
+        System.out.print(setUp1.getidNumber());
+        System.out.print(setUp1.getDepartment());
+        System.out.println(setUp1.getPostion());
+
+        Employee setUp2 = new Employee("Joy Rogers ", 81774, " Manufacturing ", " Engineer ");
+        System.out.print(setUp2.getName());
+        System.out.print(setUp2.getidNumber());
+        System.out.print(setUp2.getDepartment());
+        System.out.println(setUp2.getPostion());
+    }
+}
