@@ -1,0 +1,69 @@
+public class Employee {
+
+    private String name; // Reference the a string object that Holds employee's name.
+    private int idNumber;  // Reference the a integer object that Holds employess's ID number.
+    private String department; // Reference the a string object that Holds the name of department where employee works
+    private String position;// Reference the a string object that Holds the employee's job title
+
+    public Employee(String eN, int iD, String eD, String eP) {
+        name = eN;
+        idNumber = iD;
+        department = eD;
+        position = eP;
+    }
+
+    public Employee(String eN1, int iD1) {
+        name = eN1;
+        idNumber = iD1;
+        department = " ";
+        position = " ";
+    }
+
+    public Employee() {
+        name = " ";
+        idNumber = 0;
+        department = " ";
+        position = " ";
+    }
+
+  
+
+    public void setName(String eN2) {
+        name = eN2;
+    }
+
+    public void setidNumber(int iD2) {
+        idNumber = iD2;
+
+    }
+
+    public void setDepartment(String eD2) {
+        department = eD2;
+
+    }
+
+    public void setPostion(String eP2) {
+        position = eP2;
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getidNumber() {
+        return idNumber;
+
+    }
+
+    public String getDepartment() {
+        return department;
+
+    }
+
+    public String getPostion() {
+        return position;
+
+    }
+
+}
