@@ -1,0 +1,107 @@
+//import java.text.DecimalFormat;
+import java.text.DecimalFormat;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+/**
+ *
+ * @author Tutor
+ */
+public class TesterforPersonalInformation {
+
+    public static void main(String[] args) {
+        String firstNameS;
+        String lastNameS;
+        int ageS;
+        String pNumberS;
+        String input2;
+        String addressS;
+        //DecimalFormat formatter = new DecimalFormat("###$###$####");
+        PersonalInformation self = new PersonalInformation();
+        PersonalInformation friend = new PersonalInformation();
+        PersonalInformation family = new PersonalInformation();
+        // Get First name of self
+
+        input2 = JOptionPane.showInputDialog(" What is your first name? ");
+        self.setFName(input2);
+
+        input2 = JOptionPane.showInputDialog(" What is your last name? ");
+        self.setLName(input2);
+
+        input2 = JOptionPane.showInputDialog(" What is your address ? ");
+        self.setAddress(input2);
+
+        input2 = JOptionPane.showInputDialog(" What is your age? ");
+        ageS = Integer.parseInt(input2);
+        self.setAge(ageS);
+
+        input2 = JOptionPane.showInputDialog(" What is your Phone Number ? ");
+        self.setPhone(input2);
+        //self.setLName(input2)
+        // input2 = JOptionPane.showInputDialog(" What is your phone number? ");
+        //pNumberS = Long.parseLong(input2);
+        // self.setPhone(pNumberS);
+
+        System.out.println(" Name :" + self.getFName() + " " + self.getLName());
+
+        System.out.println(" Address :" + self.getAddress());
+
+        System.out.println(" Age :" + self.getAge());
+
+        System.out.println(" Phone Number :" + self.getPhone());
+
+        input2 = JOptionPane.showInputDialog(" What is your first name? ");
+        friend.setFName(input2);
+
+        input2 = JOptionPane.showInputDialog(" What is your last name? ");
+        friend.setLName(input2);
+
+        input2 = JOptionPane.showInputDialog(" What is your address ? ");
+        friend.setAddress(input2);
+
+        input2 = JOptionPane.showInputDialog(" What is your age? ");
+        ageS = Integer.parseInt(input2);
+        friend.setAge(ageS);
+
+        input2 = JOptionPane.showInputDialog(" What is your Phone Number ? ");
+        friend.setPhone(input2);
+
+        System.out.println(" Name :" + friend.getFName() + " " + friend.getLName());
+
+        System.out.println(" Address :" + friend.getAddress());
+
+        System.out.println(" Age :" + friend.getAge());
+
+        System.out.println(" Phone Number :" + friend.getPhone());
+
+        input2 = JOptionPane.showInputDialog(" What is your first name? ");
+        family.setFName(input2);
+
+        input2 = JOptionPane.showInputDialog(" What is your last name? ");
+        family.setLName(input2);
+
+        input2 = JOptionPane.showInputDialog(" What is your address ? ");
+        family.setAddress(input2);
+
+        input2 = JOptionPane.showInputDialog(" What is your age? ");
+        ageS = Integer.parseInt(input2);
+        family.setAge(ageS);
+
+        input2 = JOptionPane.showInputDialog(" What is your Phone Number ? ");
+        family.setPhone(input2);
+
+        System.out.println(" Name :" + family.getFName() + " " + family.getLName());
+
+        System.out.println(" Address :" + family.getAddress());
+
+        System.out.println(" Age :" + family.getAge());
+
+        System.out.println(" Phone Number :" + family.getPhone());
+
+    }
+}
