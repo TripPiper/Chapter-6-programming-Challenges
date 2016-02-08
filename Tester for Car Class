@@ -1,0 +1,26 @@
+Public class Cars {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+
+        // Create a new car
+        CarClass sCar = new CarClass(1985, "Chevy C-10");
+
+        // Display the current status.
+        System.out.println("Year: " + sCar.getYear());
+        System.out.println("Year: " + sCar.getMake());
+        System.out.println("Year: " + sCar.getSpeed());
+
+        // Accelerate and re-display the speed
+        sCar.accelerate();
+        System.out.println("  ");
+        System.out.println("After braking the Speed is ");
+        System.out.println("  ");
+        // Brake and re-display the speed
+        sCar.brake();
+
+    }
+
+}
