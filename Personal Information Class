@@ -1,0 +1,80 @@
+//import java.text.DecimalFormat;
+import java.util.Scanner;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+/**
+ *
+ * @author Tutor
+ */
+public class PersonalInformation {
+
+    private String firstName;
+    private String lastName;
+    private int age;
+    private long pNumber;
+    private String address;
+
+   /** public PersonalInformation(String f, String l, int a, long p) {
+        firstName = f;
+        lastName = l;
+        age = a;
+        pNumber = p;
+    }
+     */
+
+    public void setFName(String f) {
+        firstName = f;
+    }
+
+    public void setLName(String l) {
+        lastName = l;
+    }
+    
+    public void setAddress(String A) 
+    {
+       address =A ;
+        
+    }
+
+    public void setAge(int a) {
+        age = a;
+    }
+
+    public void setPhone(long p) {
+        pNumber = p;
+    }
+    
+    
+
+
+    public String getFName() {
+
+        return firstName;
+    }
+
+    public String getLName() {
+
+        return lastName;
+    }
+
+    public int getAge() {
+
+        return age;
+    }
+
+    /**
+     *
+     * @return pNumber
+     */
+    public long getPhone() {
+
+        return pNumber;
+
+    }
+
+    
+}
