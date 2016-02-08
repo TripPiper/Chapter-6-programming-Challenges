@@ -1,0 +1,49 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package chapter.pkg6;
+
+import java.text.DecimalFormat;
+
+/**
+ *
+ * @author Me
+ */
+public class TestRetailItems {
+
+    public static void main(String[] args) {
+        String Jacket = " Jacket ";
+        //int unit1140 =12;
+        // double unit1 = 59.95 ;
+        DecimalFormat formatter = new DecimalFormat("$#,##0.00");
+
+// Jackets.
+        RetailItems item1 = new RetailItems(Jacket, 12, 59.95);
+
+// designerJeans.
+        RetailItems item2 = new RetailItems(" Designer Jeans ", 40, 34.95);
+
+// Shirts.
+        RetailItems item3 = new RetailItems("Shirt", 20, 24.95);
+
+// Display the info for Jacket.
+        System.out.println("Jacket");
+        System.out.println("Description: " + item1.getDescription());
+        System.out.println("Units on hand: " + item1.getUnitOnHold());
+        System.out.println("Price: " + formatter.format(item1.getPrice()));
+
+// Display the info for designerJeans.
+        System.out.println("\ndesignerJeans");
+        System.out.println("Description: " + item2.getDescription());
+        System.out.println("Units on hand: " + item2.getDescription());
+        System.out.println("Price: " + formatter.format( item2.getPrice()));
+
+// Display the info for Shirts.
+        System.out.println("\nShirts");
+        System.out.println("Description: " + item3.getDescription());
+        System.out.println("Units on hand: " + item3.getDescription());
+        System.out.println("Price: " + formatter.format( item3.getPrice()));
+    }
+}
