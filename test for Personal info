@@ -1,0 +1,34 @@
+public class TesterforPersonalInformation {
+
+    public static void main(String[] args) {
+        String firstNameS;
+        String lastNameS;
+        int ageS;
+        long pNumberS;
+        String input2;
+        String addressS;
+        //DecimalFormat formatter = new DecimalFormat("###$###$####");
+        PersonalInformation self = new PersonalInformation();
+        PersonalInformation friend = new PersonalInformation();
+        PersonalInformation family = new PersonalInformation();
+        // Get First name of self
+
+        input2 = JOptionPane.showInputDialog(" What is your first name? ");
+        self.setFName(input2);
+
+        input2 = JOptionPane.showInputDialog(" What is your last name? ");
+        self.setLName(input2);
+        
+         input2 = JOptionPane.showInputDialog(" What is your address ? ");
+         self.setAddress(input2);
+   
+        input2 = JOptionPane.showInputDialog(" What is your age? ");
+        ageS = Integer.parseInt(input2);
+        self.setAge(ageS);
+        
+        input2 = JOptionPane.showInputDialog(" What is your phone number? ");
+        pNumberS = Long.parseLong(input2);
+        self.setPhone(pNumberS);
+        
+        
+        System.out.println(self.getFName());
