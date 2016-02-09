@@ -1,0 +1,60 @@
+public class Payroll 
+{
+   
+
+private String name;
+private String Id;
+private double rate;
+private int hours;
+
+public Payroll ( String n, String I, double r,int h)
+{
+name =n;
+Id =I;
+rate = r;
+hours = h;
+}
+
+public void setName(String n)
+{
+name =n;
+}
+
+public void setId(String I)
+{
+Id =I;
+}
+
+public void setRate(double r)
+{
+rate= r;
+}
+public void setPay(int h)
+{
+hours=h;
+}
+
+public String getName()
+{
+return name ;
+}
+
+public String getId()
+{
+   return Id ;
+}
+
+public double getRate()
+{
+return rate;
+}
+
+public double getPay()
+{
+return (hours * rate);
+}
+}
+
+
+ 
+
