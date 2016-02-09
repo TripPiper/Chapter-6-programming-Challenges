@@ -1,0 +1,18 @@
+
+
+public static void main(String[] args) {
+
+        double r1;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println(" What is the radius ?");
+        r1 = input.nextDouble();
+
+        Circle circle1 = new Circle(r1);
+
+        System.out.println(" Area :" + circle1.getArea());
+        System.out.println(" Diameter :" + circle1.getDiameter());
+        System.out.println(" Circumference:" + circle1.getCircumference());
+    }
+}
