@@ -1,0 +1,44 @@
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Tutor
+ */
+public class TesterPayroll 
+
+{
+ public static void main (String [] args)
+{
+String n;
+String I;
+double r;
+int h;
+
+Scanner input =new Scanner (System.in);
+DecimalFormat formatter = new DecimalFormat("$#,#00.00");
+System.out.println ( "What is your name ?");
+n=input.nextLine();
+
+System.out.println ( "What is your employee Id ?");
+I =input.nextLine();
+
+System.out.println ( "What is your pay rate?");
+r=input.nextDouble();
+
+System.out.println ( "How many hours did you work ?");
+h=input.nextInt();
+
+Payroll employee =new Payroll(n,I,r,h);
+System.out.println( formatter.format(employee.getPay()));
+
+
+
+}   
+}
