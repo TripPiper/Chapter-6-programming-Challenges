@@ -1,0 +1,120 @@
+
+import static javax.xml.bind.DatatypeConverter.parseInteger;
+
+/**
+ * A bank account charges $10 per month plus the following check fees for a
+ * commercial checking account:
+ *
+ * $.10 each for fewer than 20 checks $.08 each for 20-39 checks $.06 each for
+ * 40-59 checks $.04 each for 60 or more checks
+ * The bank also charges $15 is the balance falls below $400
+ * Write a program that asks for the number of checks written for the month. The
+ * program should then calculate and display the bank's services fees for the
+ * month.
+ */
+public class BankCharges {
+
+    private double bBalance;
+    private double bChecks;
+
+    // Sets starting balance.
+    public BankCharges() {
+        bBalance = 0.0;
+        bChecks = 0.0;
+    }
+
+    // Sets starting balance as value passed as argument
+    public BankCharges(double startingBalance, double startChecks) {
+        bBalance = startingBalance;
+        bChecks = startChecks;
+    }
+
+    // Set starting value pass to value in string
+    public BankCharges(String bBs, String bCs) {
+        bBalance = Double.parseDouble(bBs);
+
+        bChecks = Double.parseDouble(bCs);
+    }
+
+//Deposit methods makes deposits into the account
+    public void Deposit(double amount1) {
+        bBalance += amount1;
+
+    }
+
+    //Deposit methods makes deposits into the account using strngs
+    public void Deposit(String bBs) {
+        bBalance += Double.parseDouble(bBs);
+
+    }
+
+//Withdrawl method makes withdrawls from the account
+    public void Withdrawl(double amount1) {
+        bBalance -= amount1;
+    }
+
+    //Withdrawl method makes withdrawls from the account for String
+    public void Withdrawl(String bBs) {
+        bBalance -= Double.parseDouble(bBs);
+    }
+
+// Checks methods counts number of checks written
+    public void checks(double bCs) {
+
+        bChecks += bCs;
+    }
+
+    // Checks methods counts additional number of checks written Strings
+    public void checks(String bCs) {
+         
+        bChecks += Double.parseDouble(bCs);
+    }
+
+    public void setbBalance(double b) {
+        bBalance = b;
+    }
+
+    public void setbBalance(String bBs) {
+        bBalance = Double.parseDouble(bBs);
+    }
+
+    public void setbchecks(double bCs) {
+
+        bChecks = bCs;
+
+    }
+
+    public void setbchecks(String bCs) {
+        bChecks = Double.parseDouble(bCs);
+
+    }
+
+    public double getbBalance() {
+
+        return bBalance;
+    }
+
+    public double getbChecks() {
+       // System.out.println("Number of checks written " + bChecks);
+        if (bChecks < 20 || bChecks > 0) {
+            bChecks = (bChecks * (.10));
+        } else if (bChecks > 19 && bChecks < 40) {
+            bChecks = (bChecks * (.08));
+        } else if (bChecks > 39 && bChecks < 60) {
+            bChecks = (bChecks * (.60));
+        } else if (bChecks > 59) {
+            bChecks = (bChecks * (.04));
+        } else {
+            bChecks = 0;
+        }
+
+        if (bBalance < 400) {
+            bChecks += 25;
+        } else {
+            bChecks = bChecks + 10;
+        }
+
+        return bChecks;
+    }
+
+}
