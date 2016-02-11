@@ -1,0 +1,41 @@
+
+import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
+
+public class TestForBankBankCharges {
+
+    public static void main(String[] args) {
+        String input;
+        String input2, input3;
+        double checks;
+        Double balance1, deposit;
+
+        DecimalFormat formatter = new DecimalFormat("$#,##0.00");
+        // Get starting balance
+        input = JOptionPane.showInputDialog(" What is your accounts starting balance");
+        balance1 = Double.parseDouble(input);
+
+        // number of checks used
+        input2 = JOptionPane.showInputDialog(" How many check have you used this month ?");
+        checks = Double.parseDouble(input2);
+
+        // Create BankCharges object
+        BankCharges balance = new BankCharges(balance1, checks);
+        BankCharges deposit1 = new BankCharges(input, input2);
+
+        input3 = JOptionPane.showInputDialog(" How much would you like to deposit ?");
+        deposit1.Deposit(input3);
+
+        input3 = JOptionPane.showInputDialog(" Did you write any additional checks? If not enter 0.");
+        deposit1.checks(input3);
+
+        /**
+         * System.out.println(balance.getbBalance());
+         * System.out.println(balance.getbChecks());
+         */
+        System.out.println("Ending balance :" + formatter.format(deposit1.getbBalance() - deposit1.getbChecks())
+                + " Service fee have been subtracted from this balance");
+        System.out.println("Service charge :" + formatter.format(deposit1.getbChecks()));
+
+    }
+}
