@@ -1,0 +1,46 @@
+
+import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
+
+public class FreezingAndBoilingPointsTester {
+
+    public static void main(String[] args) {
+        String input;
+        double temp1;
+
+        // Get starting balance
+        input = JOptionPane.showInputDialog(" Enter the temperature.");
+        temp1 = Double.parseDouble(input);
+
+        FreezingAndBoilingPoints determine = new FreezingAndBoilingPoints(temp1);
+        System.out.println("At the temperature : " + determine.getTemp());
+
+        if (determine.isEthylFreezing() == true) {
+            System.out.println("Ethyl will freeze.  ");
+        }
+
+        if (determine.isEthylBoiling() == true) {
+            System.out.println("Ethy will boil.  ");
+        }
+
+        if (determine.isOxygenFreezing() == true) {
+            System.out.println("Oxygen will freeze.  ");
+        }
+
+        if (determine.isOxygenBoiling() == true) {
+            System.out.println("Oxygen will boil.  ");
+        }
+
+        if (determine.isWaterFreezing() == true) {
+
+            System.out.println("Water will freeze.  ");
+        }
+
+        if (determine.isWaterBoiling() == true) {
+
+            System.out.println("Water will boil.  ");
+
+        }
+
+    }
+}
