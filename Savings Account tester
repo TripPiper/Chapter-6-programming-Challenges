@@ -1,0 +1,61 @@
+
+
+
+
+
+
+import java.text.DecimalFormat;
+import javax.swing.JOptionPane;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+/**
+ *
+ * @author Me
+ */
+public class TesterSAvingsAccount {
+
+    public static void main(String[] args) {
+        String input, input2;
+        double balance1, rate1, deposit = 0.0, months, withdraw = 0.0;
+
+        DecimalFormat formatter = new DecimalFormat("$#,##0.00");
+        // Get starting balance
+        input = JOptionPane.showInputDialog(" What is your account's starting balance ?");
+        balance1 = Double.parseDouble(input);
+        // This object constructor gets double version of starting balance 
+        SavingsAccount account = new SavingsAccount(balance1);
+        // This object constructor gets String version of starting balance 
+        SavingsAccount accountS = new SavingsAccount(input);
+
+        input2 = JOptionPane.showInputDialog(" What is your annual interest rate ? ");
+        rate1 = Double.parseDouble(input2);
+
+        account.setARate(rate1);
+
+        //Start of tester program
+        input2 = JOptionPane.showInputDialog(" How many months has this acocunt been open? ");
+        months = Double.parseDouble(input2);
+        for (int i = 1; i <= (months); i++) {
+            input2 = JOptionPane.showInputDialog(" How much did you deposit for the month ?");
+            deposit = Double.parseDouble(input2);
+            account.deposit(deposit);
+
+            input2 = JOptionPane.showInputDialog(" How much did you withdraw for the month ? ");
+            withdraw = Double.parseDouble(input2);
+            account.withdraw(withdraw);
+            account.sumMInterest();
+        }
+
+        JOptionPane.showMessageDialog(null, "Starting Balance : " + formatter.format(balance1) + "\n"
+                + "Total deposit :" + formatter.format(account.getAccDeposits()) + "\n"
+                + "Total withdrawls :" + formatter.format(account.getAccWithdrawals()) + "\n"
+                + "Interest earned : " + formatter.format(account.getAccInterest()) + "\n"
+                + "Ending Balance :" + formatter.format(account.getbBalance()));
+
+    }
+
+}
