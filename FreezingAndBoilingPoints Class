@@ -1,0 +1,63 @@
+public class FreezingAndBoilingPoints {
+
+    private double temperature;
+
+    public FreezingAndBoilingPoints() {
+        temperature = 0.0;
+    }
+
+    public FreezingAndBoilingPoints(double temp) {
+        temperature = temp;
+       
+    }
+
+    public FreezingAndBoilingPoints(String tempS) {
+        temperature = Double.parseDouble(tempS);
+    }
+
+    public void setTemp(double t) {
+        temperature = t;
+
+    }
+
+    public void setTemp(String t) {
+        temperature = Double.parseDouble(t);
+    }
+
+    public double getTemp() {
+       // System.out.println(temperature); Tester for temperature
+        return temperature;
+    }
+
+    public boolean isEthylFreezing() {
+
+        return temperature <= -174;
+    }
+
+    public boolean isEthylBoiling() {
+
+        return temperature >= 172;
+    }
+
+    public boolean isOxygenFreezing() {
+
+        return temperature <= -362;
+    }
+
+    public boolean isOxygenBoiling() {
+
+        return temperature >= -306;
+    }
+
+    public boolean isWaterFreezing() {
+
+        return temperature <= 32;
+
+    }
+
+    public boolean isWaterBoiling() {
+
+        return temperature >= 212;
+    }
+
+}
