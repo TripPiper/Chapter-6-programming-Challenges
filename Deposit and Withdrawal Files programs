@@ -1,0 +1,67 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.text.DecimalFormat;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+/**
+ *
+ * @author Tutor
+ */
+public class DepositsAndWDemo {
+
+    public static void main(String[] args) throws FileNotFoundException {
+
+        String input, input2;
+        double balance1 = 0, rate1, deposit = 0.0, months, withdraw = 0.0;
+        double dep, wit;
+        DecimalFormat formatter = new DecimalFormat("$#,##0.00");
+        // This object constructor gets double version of starting balance 
+        SavingsAccount account = new SavingsAccount(500);
+        // This object constructor gets String version of starting balance 
+        SavingsAccount accountS = new SavingsAccount("500");
+
+        JOptionPane.showMessageDialog(null, " Your starting balance is  $500 .");
+        //Gets interest rate
+        input2 = JOptionPane.showInputDialog(" What is your annual interest rate ? ");
+        rate1 = Double.parseDouble(input2);
+        account.setARate(rate1);
+
+        //Opens the Deposits.txt file
+        File depositsFile = new File(" Deposits.txt");
+        Scanner MyDeposits = new Scanner(depositsFile);
+
+        //Opens the Withdrawals.txt file
+        File withdrawalsFiles = new File(" Withdrawals.txt");
+        Scanner MyWithdrawals = new Scanner(withdrawalsFiles);
+
+        while (MyDeposits.hasNext()) {
+
+            dep = MyDeposits.nextDouble();
+            //call the deposit method
+            account.deposit(dep);
+        }
+        //System.out.println("Withdrawals ");
+        while (MyWithdrawals.hasNext()) {
+            wit = MyWithdrawals.nextDouble();
+            // calls the withdrawal and add interest method
+            account.withdraw(wit);
+            account.sumMInterest();
+        }
+        JOptionPane.showMessageDialog(null, "Starting Balance : " + formatter.format(500) + "\n"
+                + "Total deposit :" + formatter.format(account.getAccDeposits()) + "\n"
+                + "Total withdrawls :" + formatter.format(account.getAccWithdrawals()) + "\n"
+                + "Interest earned : " + formatter.format(account.getAccInterest()) + "\n"
+                + "Ending Balance :" + formatter.format(account.getbBalance()));
+
+        MyDeposits.close();
+        MyWithdrawals.close();
+
+    }
+
+}
