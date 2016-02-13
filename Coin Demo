@@ -1,0 +1,31 @@
+public class CoinsDemo {
+
+    public static void main(String[] args) {
+        Coin demo1 = new Coin();
+        Coin demo = new Coin();
+        int h = 0;
+        int t = 0;
+
+        for (int i = 1; i < 21; i++) {
+            demo.toss(2);
+        }
+        System.out.println("The initial position of the coin is "
+                + demo.getSideUp());
+        System.out.println("    ");
+
+        demo.toss(20);
+        for (int i = 1; i < 21; i++) {
+
+            demo.toss(20);
+
+            if (demo.getSideUp() == "Heads") {
+                h += 1;
+            } else if (demo.getSideUp() == "Tails") {
+                t += 1;
+            }
+
+        }
+
+        System.out.println("Head count " + h + " Tail count " + t);
+    }
+}
