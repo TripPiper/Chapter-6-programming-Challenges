@@ -1,0 +1,43 @@
+import java.util.Random;
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+/**
+ *
+ * @author Tutor
+ */
+public class Coin {
+
+    String sideUp; // will hold either heads or tails
+    Random rNum = new Random();
+
+    public Coin() {
+        sideUp = null;
+
+    }
+
+    public void toss(int b) {
+        int u = rNum.nextInt(b);
+        if (u == 0 ) {
+            sideUp = "Heads";
+        } else {
+            sideUp = "Tails";
+        }
+        int z = rNum.nextInt(b);
+
+        if (z == 0 || z == 2 || z == 4 || z == 6 || z == 8 || z == 10 || 
+                z == 12 || z == 14 || z == 16 || z == 18 || z == 20) {
+            sideUp = "Tails";
+        } else {
+            sideUp = "Heads";
+        }
+    }
+
+    public String getSideUp() {
+        return sideUp;
+    }
+
+}
