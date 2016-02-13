@@ -1,0 +1,47 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+/**
+ *
+ * @author Tutor
+ */
+public class CoinsDemo {
+
+    public static void main(String[] args) {
+
+        int headCount = 0;
+        int Tosses = 20;
+
+        // Create an instance of the Coin class.
+        Coin demo = new Coin();
+
+        // Display initial toss
+        System.out.println("The initial position of the coin is "
+                + demo.getSideUp());
+        System.out.println("    ");
+        // Toss the coin repeatedly.
+        System.out.println("Now I will toss the coin "
+                + Tosses + " times.");
+        System.out.println("    ");
+        // demo.toss();
+        for (int i = 1; i < Tosses + 1; i++) {
+            // Toss the coin.
+            demo.toss();
+            // Display the side facing up.
+            System.out.println(" Toss " + demo.getSideUp());
+            if ("Heads".equals(demo.getSideUp())) {
+                System.out.println(" Toss " + demo.getSideUp());
+                headCount++;
+
+            }
+
+        }
+        // Display the  count
+        System.out.println("    ");
+        System.out.println("Head count " + headCount + "\n" + "Tail count " + (Tosses - headCount));
+        System.exit(0);
+    }
+}
